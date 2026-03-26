@@ -782,13 +782,13 @@ public class CheckoutTest {
                     && optionTexts.size() > 0;
 
             if (passed) {
-                System.out.println("✅ Delivery Method & Gift Packaging PASS");
+                System.out.println("Delivery Method & Gift Packaging PASS");
             } else {
-                System.out.println("❌ Delivery Method & Gift Packaging FAIL");
+                System.out.println(" Delivery Method & Gift Packaging FAIL");
             }
 
         } catch (Exception e) {
-            System.out.println("❌ Delivery Method & Gift Packaging FAIL");
+            System.out.println(" Delivery Method & Gift Packaging FAIL");
             System.out.println("Reason             : " + e.getMessage());
         }
 
@@ -917,17 +917,16 @@ public class CheckoutTest {
             System.out.println("Moved To Payment   : " + movedToPayment);
 
             if (methodChanged && movedToPayment) {
-                System.out.println("✅ Continue To Payment PASS");
+                System.out.println("Continue To Payment PASS");
             } else {
-                System.out.println("❌ Continue To Payment FAIL");
+                System.out.println("Continue To Payment FAIL");
                 System.out.println("Method Changed     : " + methodChanged);
             }
 
         } catch (Exception e) {
-            System.out.println("❌ Select Delivery FAIL");
+            System.out.println(" Select Delivery FAIL");
             System.out.println("Reason             : " + e.getMessage());
         }
 
-        System.out.println("===========================================\n");
     }
 }
