@@ -38,7 +38,6 @@ public class hometest {
     }
 
     
-    // Verify hero banner card and button
   
     public static void testHeroCardClick(WebDriver driver, JavascriptExecutor js) throws InterruptedException {
 
@@ -102,7 +101,6 @@ public class hometest {
         }
     }
 
- // Verify Shop by Category card click navigation
 
  public static void testShopByCategoryClick(WebDriver driver, JavascriptExecutor js) throws InterruptedException {
 
@@ -225,7 +223,6 @@ public class hometest {
          Thread.sleep(3000);
 
         
-      //  Click SHOP NOW button
 
       WebElement shopNow = driver.findElement(
               By.xpath("//a[.//*[text()='SHOP NOW'] and .//*[contains(text(),'Made to flatter') or contains(text(),'Shoreline')]]")
@@ -266,7 +263,6 @@ public class hometest {
          driver.get("https://www.garnethill.com/");
          Thread.sleep(3000);
 
-         //  Click  image  Doormats
          WebElement firstImage = driver.findElement(
                  By.xpath("//img[@alt='Shop Doormats.']")
          );
@@ -291,7 +287,6 @@ public class hometest {
              System.out.println("Actual page: " + after);
          }
 
-         //  Click  heading  Doormats
          driver.get("https://www.garnethill.com/");
          Thread.sleep(3000);
 
@@ -319,7 +314,6 @@ public class hometest {
              System.out.println("Actual page: " + after);
          }
 
-          //  Click  button SHOP DOORMATS
          driver.get("https://www.garnethill.com/");
          Thread.sleep(3000);
 
@@ -347,7 +341,6 @@ public class hometest {
              System.out.println("Actual page: " + after);
          }
 
-         //  Click Wrinkle-Resistant Sateen
    
          driver.get("https://www.garnethill.com/");
          Thread.sleep(3000);
@@ -377,7 +370,6 @@ public class hometest {
          }
 
         
-         //  Click second heading
     
          driver.get("https://www.garnethill.com/");
          Thread.sleep(3000);
@@ -406,7 +398,6 @@ public class hometest {
              System.out.println("Actual page: " + after);
          }
 
-         //  Click SHOP NOW
        
          driver.get("https://www.garnethill.com/");
          Thread.sleep(3000);
@@ -442,7 +433,6 @@ public class hometest {
 
      }
  }
-//Test Eileen Fisher section
 public static void testEileenFisherSection(WebDriver driver, JavascriptExecutor js) throws InterruptedException {
 
   System.out.println("----- Testing Eileen Fisher Section -----");
@@ -477,7 +467,6 @@ public static void testEileenFisherSection(WebDriver driver, JavascriptExecutor 
           System.out.println("Actual page: " + after);
       }
 
-      //  Click Heading
       driver.get("https://www.garnethill.com/");
       Thread.sleep(3000);
 
@@ -504,7 +493,6 @@ public static void testEileenFisherSection(WebDriver driver, JavascriptExecutor 
           System.out.println("Actual page: " + after);
       }
 
-      //  Click Button
       driver.get("https://www.garnethill.com/");
       Thread.sleep(3000);
 
@@ -539,7 +527,6 @@ public static void testEileenFisherSection(WebDriver driver, JavascriptExecutor 
   }
 }
 
-//Test Main Hero Banner
 public static void testMainHeroBanner(WebDriver driver, JavascriptExecutor js) throws InterruptedException {
 
  System.out.println(" Testing Main Hero Banner ");
@@ -582,7 +569,6 @@ public static void testMainHeroBanner(WebDriver driver, JavascriptExecutor js) t
  }
 }
 
-//Test Just For You section 
 public static void testJustForYouSection(WebDriver driver, JavascriptExecutor js) throws InterruptedException {
 
  System.out.println(" Testing Just For You Section ");
@@ -592,7 +578,6 @@ public static void testJustForYouSection(WebDriver driver, JavascriptExecutor js
      driver.get("https://www.garnethill.com/");
      Thread.sleep(3000);
 
-     //  Scroll to section
    
      WebElement section = driver.findElement(
              By.xpath("//h2[text()='Just For You']")
@@ -601,7 +586,6 @@ public static void testJustForYouSection(WebDriver driver, JavascriptExecutor js
      js.executeScript("arguments[0].scrollIntoView({block:'center'});", section);
      Thread.sleep(1500);
 
-     //  Click first product image
      WebElement firstProduct = driver.findElement(
              By.xpath("(//div[@class='c-slider__content']//a[contains(@class,'c-universal-product-item__main-image')])[1]")
      );
@@ -621,7 +605,6 @@ public static void testJustForYouSection(WebDriver driver, JavascriptExecutor js
      }
 
     
-     //  Slider arrows
      driver.get("https://www.garnethill.com/");
      Thread.sleep(3000);
 
@@ -651,7 +634,6 @@ public static void testJustForYouSection(WebDriver driver, JavascriptExecutor js
      System.out.println("Previous arrow click PASS");
 
 
-     //  Click all images
      for (int i = 1; i <= 5; i++) {
 
          try {
@@ -688,7 +670,6 @@ public static void testJustForYouSection(WebDriver driver, JavascriptExecutor js
          }
      }
 
-     // 5️Click all titles
      for (int i = 1; i <= 5; i++) {
 
          try {
