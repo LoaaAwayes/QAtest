@@ -48,11 +48,10 @@ public class pdp {
 	
 	public static void openRandomProduct(WebDriver driver, JavascriptExecutor js) throws InterruptedException {
 
-	    // افتح category
+	 
 	    driver.get("https://www.garnethill.com/clothing/categories/");
 	    Thread.sleep(3000);
 
-	    // خذ أول منتج
 	    List<WebElement> products = driver.findElements(
 	            By.cssSelector(".c-product-item-title-link")
 	    );
@@ -72,9 +71,7 @@ public class pdp {
 
 	    System.out.println("----- Testing PDP (FIXED) -----");
 
-	    // ======================
-	    // 🔥 1. PDP LOAD
-	    // ======================
+	
 	    try {
 
 	        WebElement name = driver.findElement(By.cssSelector("h1"));
@@ -88,9 +85,6 @@ public class pdp {
 	        System.out.println("PDP load FAIL");
 	    }
 
-	    // ======================
-	    // 🔥 2. IMAGE GALLERY
-	    // ======================
 	    try {
 
 	        List<WebElement> nextBtns = driver.findElements(
@@ -121,10 +115,6 @@ public class pdp {
 	    } catch (Exception e) {
 	        System.out.println("Image ERROR");
 	    }
-
-	    // ======================
-	    // 🔥 3. COLOR SELECTION (FIXED)
-	    // ======================
 	    try {
 
 	        List<WebElement> colors = driver.findElements(
@@ -154,9 +144,6 @@ public class pdp {
 	        System.out.println("Color ERROR");
 	    }
 
-	    // ======================
-	    // 🔥 4. SIZE SELECTION (FIXED)
-	    // ======================
 	    try {
 
 	        List<WebElement> sizes = driver.findElements(
@@ -179,9 +166,6 @@ public class pdp {
 	        System.out.println("Size ERROR");
 	    }
 
-	    // ======================
-	    // 🔥 5. ADD TO CART (FIXED)
-	    // ======================
 	    try {
 
 	        WebElement add = driver.findElement(
@@ -203,9 +187,6 @@ public class pdp {
 	        System.out.println("Add to cart ERROR");
 	    }
 
-	    // ======================
-	    // 🔥 6. VALIDATION TEST
-	    // ======================
 	    try {
 
 	        driver.navigate().refresh();
@@ -228,7 +209,7 @@ public class pdp {
 	        System.out.println("Validation ERROR");
 	    }
 
-	    System.out.println("PDP test completed ✅");
+	    System.out.println("PDP test completed ");
 	}
 	public static void testPDPImageArrows(WebDriver driver, JavascriptExecutor js) throws InterruptedException {
 
@@ -260,7 +241,7 @@ public class pdp {
 	            if (!before.equals(after)) {
 	                System.out.println("Image arrows PASS");
 	            } else {
-	                System.out.println("Image NOT changed ❌");
+	                System.out.println("Image NOT changed ");
 	            }
 
 	        } else {
@@ -286,7 +267,6 @@ public class pdp {
 	        actions.moveToElement(image).perform();
 	        Thread.sleep(1500);
 
-	        // 🔥 zoom lens
 	        List<WebElement> zoom = driver.findElements(
 	                By.cssSelector(".c-zoom-magnifier__lens")
 	        );
@@ -294,7 +274,7 @@ public class pdp {
 	        if (!zoom.isEmpty() && zoom.get(0).isDisplayed()) {
 	            System.out.println("Zoom hover PASS");
 	        } else {
-	            System.out.println("Zoom NOT visible ❌");
+	            System.out.println("Zoom NOT visible ");
 	        }
 
 	    } catch (Exception e) {
@@ -307,7 +287,6 @@ public class pdp {
 
 	    try {
 
-	        // 🔥 thumbnails list
 	        List<WebElement> thumbs = driver.findElements(
 	                By.cssSelector(".c-horizontal-scrollbar__item a")
 	        );
@@ -321,24 +300,18 @@ public class pdp {
 	                thumbs = driver.findElements(By.cssSelector(".c-horizontal-scrollbar__item a"));
 	                WebElement thumb = thumbs.get(i);
 
-	                // 🔥 scroll
 	                js.executeScript("arguments[0].scrollIntoView({block:'center'});", thumb);
 	                Thread.sleep(800);
 
-	                // 🔥 main image before
 	                WebElement mainImg = driver.findElement(
 	                        By.cssSelector(".c-carousel__item.is--active img")
 	                );
 
 	                String before = mainImg.getAttribute("src");
 
-	                // 🔥 click thumbnail
 	                js.executeScript("arguments[0].click();", thumb);
 	                Thread.sleep(1500);
 
-	                // ======================
-	                // ✅ 1. CHECK ACTIVE THUMB
-	                // ======================
 	                WebElement activeThumb = driver.findElement(
 	                        By.cssSelector(".c-horizontal-scrollbar__item a.is--active")
 	                );
@@ -348,10 +321,6 @@ public class pdp {
 	                } else {
 	                    System.out.println("img " + (i + 1) + " ACTIVE FAIL");
 	                }
-
-	                // ======================
-	                // ✅ 2. CHECK IMAGE CHANGE
-	                // ======================
 	                mainImg = driver.findElement(
 	                        By.cssSelector(".c-carousel__item.is--active img")
 	                );
@@ -361,7 +330,7 @@ public class pdp {
 	                if (!before.equals(after)) {
 	                    System.out.println("Image updated PASS");
 	                } else {
-	                    System.out.println("Image NOT changed ❌");
+	                    System.out.println("Image NOT changed ");
 	                }
 
 	            } catch (Exception e) {
@@ -373,7 +342,7 @@ public class pdp {
 	        System.out.println("Gallery NOT FOUND");
 	    }
 
-	    System.out.println("Thumbnails test completed ✅");
+	    System.out.println("Thumbnails test completed ");
 	}
 	
 	public static void testRatingSummary(WebDriver driver, JavascriptExecutor js) throws InterruptedException {
@@ -383,10 +352,6 @@ public class pdp {
 	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 	    try {
-
-	        // ======================
-	        // 🔥 SECTION VISIBLE
-	        // ======================
 	        WebElement section = wait.until(
 	                ExpectedConditions.visibilityOfElementLocated(
 	                        By.cssSelector(".bv_main_container")
@@ -402,9 +367,7 @@ public class pdp {
 	            System.out.println("Rating summary section FAIL");
 	        }
 
-	        // ======================
-	        // 🔥 AVERAGE RATING
-	        // ======================
+	        
 	        try {
 	            WebElement avgButton = section.findElement(
 	                    By.cssSelector(".bv_ratings_summary.bv_main_rating_button[aria-label*='average rating value']")
@@ -428,10 +391,6 @@ public class pdp {
 	        } catch (Exception e) {
 	            System.out.println("Average rating ERROR");
 	        }
-
-	        // ======================
-	        // 🔥 STARS COUNT
-	        // ======================
 	        try {
 	            WebElement starsContainer = section.findElement(
 	                    By.cssSelector(".bv_stars_component_container")
@@ -449,9 +408,6 @@ public class pdp {
 	            System.out.println("Stars ERROR");
 	        }
 
-	        // ======================
-	        // 🔥 REVIEWS COUNT
-	        // ======================
 	        try {
 	            WebElement reviewsCount = section.findElement(
 	                    By.cssSelector(".bv_numReviews_text")
@@ -470,9 +426,6 @@ public class pdp {
 	            System.out.println("Reviews count ERROR");
 	        }
 
-	        // ======================
-	        // 🔥 WRITE REVIEW BUTTON
-	        // ======================
 	        try {
 	            WebElement writeReviewBtn = section.findElement(
 	                    By.cssSelector(".bv_button_buttonMinimalist.bv_war_button")
@@ -488,7 +441,7 @@ public class pdp {
 	            System.out.println("Write review button ERROR");
 	        }
 
-	        System.out.println("Rating summary test completed ✅");
+	        System.out.println("Rating summary test completed ");
 
 	    } catch (Exception e) {
 	        System.out.println("Rating summary test FAIL");
@@ -503,9 +456,6 @@ public class pdp {
 	    JavascriptExecutor js = (JavascriptExecutor) driver;
 
 	    try {
-	        // ======================
-	        // 1) SELECT COLOR
-	        // ======================
 	        List<WebElement> colors = driver.findElements(
 	                By.cssSelector(".c-universal-options__option-swatch")
 	        );
@@ -513,14 +463,11 @@ public class pdp {
 	        if (!colors.isEmpty()) {
 	            js.executeScript("arguments[0].click();", colors.get(0));
 	            Thread.sleep(1500);
-	            System.out.println("Color selected ✅");
+	            System.out.println("Color selected ");
 	        } else {
 	            System.out.println("No color options found");
 	        }
 
-	        // ======================
-	        // 2) SELECT SIZE (robust)
-	        // ======================
 	        boolean sizeSelected = false;
 	        String chosenSize = "";
 
@@ -537,7 +484,6 @@ public class pdp {
 	                )
 	        );
 
-	        // selector 2 fallback: any enabled option-like button near product options
 	        if (sizeCandidates.isEmpty()) {
 	            sizeCandidates = driver.findElements(
 	                    By.xpath(
@@ -559,21 +505,18 @@ public class pdp {
 	                    Thread.sleep(1500);
 	                    chosenSize = txt;
 	                    sizeSelected = true;
-	                    System.out.println("Size selected: " + chosenSize + " ✅");
+	                    System.out.println("Size selected: " + chosenSize);
 	                    break;
 	                }
 	            } catch (Exception ignore) {}
 	        }
 
 	        if (!sizeSelected) {
-	            System.out.println("No clickable size found ❌");
+	            System.out.println("No clickable size found ");
 	            System.out.println("Likely this product did not render size buttons after color selection");
 	            return;
 	        }
 
-	        // ======================
-	        // 3) READ UNIT PRICE
-	        // ======================
 	        WebElement unitPriceEl = wait.until(
 	                ExpectedConditions.visibilityOfElementLocated(
 	                        By.cssSelector(".c-universal-price-header .price")
@@ -589,10 +532,8 @@ public class pdp {
 	        double unitPrice = Double.parseDouble(unitClean);
 
 	        System.out.println("Unit price: " + unitPrice);
-
-	        // ======================
-	        // 4) WAIT FOR QUANTITY ENABLED
-	        // ======================
+D
+	        
 	        WebElement qtyDropdown = wait.until(driver1 -> {
 	            WebElement el = driver1.findElement(
 	                    By.cssSelector("[data-cs-override-id='pdp_quantity_dropdown']")
@@ -600,9 +541,6 @@ public class pdp {
 	            return el.isEnabled() ? el : null;
 	        });
 
-	        // ======================
-	        // 5) SELECT QUANTITY
-	        // ======================
 	        int quantity = 3;
 	        Select qtySelect = new Select(qtyDropdown);
 	        qtySelect.selectByValue(String.valueOf(quantity));
@@ -610,9 +548,6 @@ public class pdp {
 
 	        System.out.println("Quantity selected: " + quantity);
 
-	        // ======================
-	        // 6) READ ACTUAL TOTAL
-	        // ======================
 	        WebElement totalContainer = wait.until(
 	                ExpectedConditions.visibilityOfElementLocated(
 	                        By.cssSelector(".c-universal-total-price-v2")
@@ -631,9 +566,6 @@ public class pdp {
 	        String totalClean = totalRaw.replaceAll("[^0-9.]", "");
 	        double actualTotal = Double.parseDouble(totalClean);
 
-	        // ======================
-	        // 7) CALCULATE EXPECTED TOTAL
-	        // ======================
 	        double expectedTotal = unitPrice * quantity;
 
 	        System.out.println("Chosen size: " + chosenSize);
@@ -641,13 +573,10 @@ public class pdp {
 	        System.out.println("Expected total (" + unitPrice + " x " + quantity + "): " + expectedTotal);
 	        System.out.println("Actual total: " + actualTotal);
 
-	        // ======================
-	        // 8) VALIDATE
-	        // ======================
 	        if (Math.abs(expectedTotal - actualTotal) < 0.01) {
-	            System.out.println("Total calculation PASS ✅");
+	            System.out.println("Total calculation PASS ");
 	        } else {
-	            System.out.println("Total calculation FAIL ❌");
+	            System.out.println("Total calculation FAIL ");
 	        }
 
 	    } catch (Exception e) {
@@ -660,13 +589,11 @@ public class pdp {
 	    try {
 	        System.out.println("----- Testing Reviews Section -----");
 
-	        // 1) Scroll شوي لتظهر عناصر الريفيوز
 	        for (int i = 0; i < 6; i++) {
 	            js.executeScript("window.scrollBy(0, 600);");
 	            Thread.sleep(1000);
 	        }
 
-	        // 2) Click on "Read Reviews" / Overall rating button
 	        WebElement readReviewsBtn = wait.until(
 	            ExpectedConditions.elementToBeClickable(
 	                By.xpath("//button[contains(@aria-label,'Read') and contains(@aria-label,'reviews')]")
@@ -679,7 +606,6 @@ public class pdp {
 
 	        System.out.println("Clicked 'Read Reviews'");
 
-	        // 3) Wait until Rating Recap appears
 	        WebElement ratingRecap = wait.until(
 	            ExpectedConditions.visibilityOfElementLocated(
 	                By.xpath("//*[contains(normalize-space(),'Rating Recap')]")
@@ -694,7 +620,6 @@ public class pdp {
 	        }
 	        System.out.println("Rating Recap PASS");
 
-	        // 4) Wait for one review card
 	        WebElement firstReviewCard = wait.until(
 	            ExpectedConditions.visibilityOfElementLocated(
 	                By.cssSelector("section[id^='bv-review-']")
@@ -708,7 +633,6 @@ public class pdp {
 	            throw new Exception("Review card not visible");
 	        }
 
-	        // 5) Verify review text exists inside first card
 	        List<WebElement> reviewTexts = firstReviewCard.findElements(
 	            By.cssSelector("[id^='bv-review-text-'], p")
 	        );
