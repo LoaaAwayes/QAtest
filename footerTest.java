@@ -30,7 +30,6 @@ public class footerTest {
         js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         Thread.sleep(3000);
 
-        // ----- Footer Visibility -----
         try {
             System.out.println("----- Testing Footer Visibility -----");
 
@@ -47,7 +46,6 @@ public class footerTest {
             System.out.println("Reason: " + e.getMessage());
         }
 
-        // ----- Connect Title -----
         try {
             System.out.println("----- Testing Connect Title -----");
 
@@ -64,7 +62,6 @@ public class footerTest {
             System.out.println("Reason: " + e.getMessage());
         }
 
-        // ----- Join Our Email List Title -----
         try {
             System.out.println("----- Testing Join Our Email List Title -----");
 
@@ -81,7 +78,6 @@ public class footerTest {
             System.out.println("Reason: " + e.getMessage());
         }
 
-        // ----- Email Input Visibility -----
         try {
             System.out.println("----- Testing Email Input Visibility -----");
 
@@ -98,7 +94,6 @@ public class footerTest {
             System.out.println("Reason: " + e.getMessage());
         }
 
-        // ----- Email Input Type And Max Length -----
         try {
             System.out.println("----- Testing Email Input Type And Max Length -----");
 
@@ -120,7 +115,6 @@ public class footerTest {
             System.out.println("Reason: " + e.getMessage());
         }
 
-        // ----- Email Input Accepts Text -----
         try {
             System.out.println("----- Testing Email Input Accepts Text -----");
 
@@ -144,7 +138,6 @@ public class footerTest {
             System.out.println("Reason: " + e.getMessage());
         }
 
-        // ----- Empty Subscribe -----
         try {
             System.out.println("----- Testing Empty Subscribe -----");
 
@@ -169,7 +162,6 @@ public class footerTest {
             System.out.println("Reason: " + e.getMessage());
         }
 
-        // ----- Invalid Email Subscribe -----
         try {
             System.out.println("----- Testing Invalid Email Subscribe -----");
 
@@ -196,7 +188,6 @@ public class footerTest {
             System.out.println("Reason: " + e.getMessage());
         }
 
-        // ----- Subscribe Button Visibility -----
         try {
             System.out.println("----- Testing Subscribe Button Visibility -----");
 
@@ -213,7 +204,6 @@ public class footerTest {
             System.out.println("Reason: " + e.getMessage());
         }
 
-        // ----- Footer Description -----
         try {
             System.out.println("----- Testing Footer Description -----");
 
@@ -231,7 +221,6 @@ public class footerTest {
             System.out.println("Reason: " + e.getMessage());
         }
 
-        // ----- Social Icons Visibility -----
         try {
             System.out.println("----- Testing Social Icons Visibility -----");
 
@@ -250,7 +239,6 @@ public class footerTest {
             System.out.println("Reason: " + e.getMessage());
         }
 
-        // ----- Social Icons Count -----
         try {
             System.out.println("----- Testing Social Icons Count -----");
 
@@ -268,7 +256,6 @@ public class footerTest {
             System.out.println("Reason: " + e.getMessage());
         }
 
-        // ----- Social Links Href -----
         try {
             System.out.println("----- Testing Social Links Href -----");
 
@@ -296,7 +283,6 @@ public class footerTest {
             System.out.println("Reason: " + e.getMessage());
         }
 
-        // ----- Customer Service Section -----
         try {
             System.out.println("----- Testing Customer Service Section -----");
 
@@ -313,7 +299,6 @@ public class footerTest {
             System.out.println("Reason: " + e.getMessage());
         }
 
-        // ----- Our Company Section -----
         try {
             System.out.println("----- Testing Our Company Section -----");
 
@@ -330,7 +315,6 @@ public class footerTest {
             System.out.println("Reason: " + e.getMessage());
         }
 
-        // ----- Shopping Tools Section -----
         try {
             System.out.println("----- Testing Shopping Tools Section -----");
 
@@ -347,7 +331,6 @@ public class footerTest {
             System.out.println("Reason: " + e.getMessage());
         }
 
-        // ----- Legal Section -----
         try {
             System.out.println("----- Testing Legal Section -----");
 
@@ -364,7 +347,6 @@ public class footerTest {
             System.out.println("Reason: " + e.getMessage());
         }
 
-        // ----- Copyright -----
         try {
             System.out.println("----- Testing Copyright -----");
 
@@ -382,7 +364,6 @@ public class footerTest {
             System.out.println("Reason: " + e.getMessage());
         }
 
-        // ----- Footer Offerings -----
         try {
             System.out.println("----- Testing Footer Offerings -----");
 
@@ -415,8 +396,6 @@ public class footerTest {
             System.out.println("Footer Offerings FAIL");
             System.out.println("Reason: " + e.getMessage());
         }
-
-        // ----- Contact Section -----
         try {
             System.out.println("----- Testing Contact Section -----");
 
@@ -443,22 +422,18 @@ public class footerTest {
             System.out.println("Reason: " + e.getMessage());
         }
 
-        // ----- Offerings Navigation -----
         testFooterOffering(driver, js, "Digital Catalog");
         testFooterOffering(driver, js, "Store Locations");
         testFooterOffering(driver, js, "Shopping Guides");
         testFooterOffering(driver, js, "Design Services");
 
-        // ----- Contact Navigation -----
         testFooterContactLink(driver, js, "Contact Us");
         testPhoneLink(driver, js, "800.870.3513");
 
-        // ----- Social Links -----
         testSocialLink(driver, js, "facebook");
         testSocialLink(driver, js, "instagram");
         testSocialLink(driver, js, "pinterest");
 
-        // ----- Footer Links Navigation -----
         testFooterLink(driver, js, "Contact Us");
         testFooterLink(driver, js, "Order Status");
         testFooterLink(driver, js, "Shipping & Handling");
@@ -475,7 +450,6 @@ public class footerTest {
         testFooterLink(driver, js, "Wish List");
         testFooterLink(driver, js, "Gift Cards");
 
-        // ----- Legal Links Navigation -----
         testLegalLink(driver, js, "Accessibility");
         testLegalLink(driver, js, "CA Supply Chains Transparency");
         testLegalLink(driver, js, "Conditions Of Use");
