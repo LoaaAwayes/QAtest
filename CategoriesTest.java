@@ -67,9 +67,7 @@ public class CategoriesTest {
             js.executeScript("arguments[0].scrollIntoView({block:'center'});", slider);
             Thread.sleep(2000);
 
-            // ======================
-            // 🔥 SLIDER ARROWS
-            // ======================
+           
             try {
 
                 WebElement nextButton = driver.findElement(
@@ -94,9 +92,7 @@ public class CategoriesTest {
                 System.out.println("Slider arrows ERROR: " + e.getMessage());
             }
 
-            // ======================
-            // 🔥 PROGRESS BAR TEST
-            // ======================
+            
             try {
 
                 WebElement range = driver.findElement(
@@ -121,18 +117,14 @@ public class CategoriesTest {
                 System.out.println("Progress bar ERROR: " + e.getMessage());
             }
 
-            // ======================
-            // COUNT CARDS
-            // ======================
+         
             int count = driver.findElements(
                     By.xpath("//div[contains(@class,'c-slider__item')]")
             ).size();
 
             System.out.println("Total cards: " + count);
 
-            // ======================
-            // LOOP ON CARDS
-            // ======================
+           
             for (int i = 1; i <= count; i++) {
 
                 // IMAGE CLICK
@@ -363,7 +355,7 @@ public class CategoriesTest {
              System.out.println("Rating sorting ERROR: " + e.getMessage());
          }
 
-            System.out.println("Sort By testing completed ✅");
+            System.out.println("Sort By testing completed");
 
         } catch (Exception e) {
 
@@ -508,7 +500,7 @@ public class CategoriesTest {
                 }
             }
 
-            System.out.println("All Sidebar + Features tested ✅");
+            System.out.println("All Sidebar + Features tested ");
 
         } catch (Exception e) {
 
@@ -654,7 +646,7 @@ public class CategoriesTest {
                 System.out.println("Accordion ERROR: " + e.getMessage());
             }
 
-            System.out.println("Filters test completed ✅");
+            System.out.println("Filters test completed ");
 
         } catch (Exception e) {
 
@@ -718,7 +710,7 @@ public class CategoriesTest {
                 }
             }
 
-            System.out.println("All pages tested ✅");
+            System.out.println("All pages tested ");
 
         } catch (Exception e) {
             System.out.println("Pagination FULL test FAIL");
@@ -904,5 +896,5 @@ public class CategoriesTest {
             }
         }
 
-        System.out.println("Product UI test completed ✅");
+        System.out.println("Product UI test completed ");
     }}
